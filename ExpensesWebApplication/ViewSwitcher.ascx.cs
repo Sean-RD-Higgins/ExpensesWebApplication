@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Web;
 using System.Web.Routing;
@@ -11,6 +12,9 @@ namespace ExpensesWebApplication
 {
     public partial class ViewSwitcher : System.Web.UI.UserControl
     {
+        private const string DESKTOP = "Desktop";
+        private const string MOBILE = "Mobile";
+
         protected string CurrentView { get; private set; }
 
         protected string AlternateView { get; private set; }
@@ -19,12 +23,19 @@ namespace ExpensesWebApplication
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            var isUsingMobileSwitcher = (ConfigurationManager.AppSettings["IsUsingMobileSwitcher"] ?? "false") == "true";
+
             // Determine current view
             var isMobile = WebFormsFriendlyUrlResolver.IsMobileView(new HttpContextWrapper(Context));
-            CurrentView = isMobile ? "Mobile" : "Desktop";
+            CurrentView = isMobile ? MOBILE : DESKTOP;
 
             // Determine alternate view
-            AlternateView = isMobile ? "Desktop" : "Mobile";
+            AlternateView = isMobile ? DESKTOP : MOBILE;
+
+            if (!isUsingMobileSwitcher) {
+                CurrentView = DESKTOP;
+                AlternateView = DESKTOP;
+            }
 
             // Create switch URL from the route, e.g. ~/__FriendlyUrls_SwitchView/Mobile?ReturnUrl=/Page
             var switchViewRouteName = "AspNet.FriendlyUrls.SwitchView";
