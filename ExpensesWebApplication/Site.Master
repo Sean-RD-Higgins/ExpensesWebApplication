@@ -17,7 +17,7 @@
 
 </head>
 <body>
-    <form runat="server">
+    <form id="mainForm" runat="server">
         <asp:ScriptManager runat="server">
             <Scripts>
                 <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
