@@ -7,9 +7,11 @@ using System.Threading.Tasks;
 
 namespace ExpensesLibrary.Strategy
 {
+    // TODO - Add xml summaries with parameters
     public class ExpenseStrategy
     {
 
+        // TODO - Add xml summaries with parameters
         const float AVERAGE_DAYS_IN_A_MONTH_FLOAT = 30.42f;
         const decimal AVERAGE_DAYS_IN_A_MONTH_DECIMAL = 30.42m;
         const float DAYS_IN_A_WEEK_FLOAT = 7.0f;
@@ -28,6 +30,7 @@ namespace ExpensesLibrary.Strategy
             };
         }
 
+        // TODO - These are default values, retrieve the actual list from the database after login. 
         public IList<Expense> GetExpenseList()
         {
             return new List<Expense>()
@@ -39,6 +42,7 @@ namespace ExpensesLibrary.Strategy
             };
         }
 
+        // TODO - These are default values, retrieve the actual list from the database after login. 
         public IList<VariableExpense> GetVariableExpenseList()
         {
             return new List<VariableExpense>() {
@@ -69,7 +73,8 @@ namespace ExpensesLibrary.Strategy
                 },
             };
         }
-        
+
+        // TODO - These are default values, retrieve the actual list from the database after login. 
         public IList<VariableExpense> GetVariableIncomeList()
         {
             return new List<VariableExpense>() {
@@ -101,6 +106,7 @@ namespace ExpensesLibrary.Strategy
             };
         }
 
+        // TODO - Add xml summaries with parameters
         public decimal GetDailyCost(VariableExpense variableExpense)
         {
             DateTime minimumDateTime = variableExpense.VariableExpenseLineList.Min(line => line.Date);
@@ -111,11 +117,13 @@ namespace ExpensesLibrary.Strategy
             return dailyCost;
         }
 
+        // TODO - Add xml summaries with parameters
         public decimal GetMonthlyCost(VariableExpense variableExpense)
         {
             return GetDailyCost(variableExpense) * AVERAGE_DAYS_IN_A_MONTH_DECIMAL;
         }
 
+        // TODO - Add xml summaries with parameters
         public decimal GetMonthlyTotalExpenses()
         {
             var incomeList = GetIncomeList();
@@ -124,6 +132,7 @@ namespace ExpensesLibrary.Strategy
             return GetMonthlyTotalExpenses(incomeList, expenseList, variableExpenseList);
         }
 
+        // TODO - Add xml summaries with parameters
         public decimal GetMonthlySum(Expense income)
         {
             switch (income.Frequency)
@@ -145,6 +154,7 @@ namespace ExpensesLibrary.Strategy
             }
         }
 
+        // TODO - Add xml summaries with parameters
         public decimal GetMonthlyExpenseTotal(IList<Expense> incomeList)
         {
             var incomeTotal = 0.0m;
@@ -155,6 +165,7 @@ namespace ExpensesLibrary.Strategy
             return incomeTotal;
         }
 
+        // TODO - Add xml summaries with parameters
         public decimal GetMonthlyTotalExpenses(IList<Expense> incomeList, IList<Expense> expenseList, IList<VariableExpense> variableExpenseList)
         {
             var incomeTotal = GetMonthlyExpenseTotal(incomeList);
@@ -164,11 +175,13 @@ namespace ExpensesLibrary.Strategy
             return GetMonthlyTotalExpenses(incomeTotal, expenseTotal);
         }
 
+        // TODO - Add xml summaries with parameters
         public decimal GetMonthlyTotalExpenses(decimal income, decimal expenses)
         {
             return income - expenses;
         }
 
+        // TODO - Add xml summaries with parameters
         public ExpensesAudit GetBalanceModel()
         {
             ExpensesAudit balanceModel = new ExpensesAudit()
@@ -188,11 +201,13 @@ namespace ExpensesLibrary.Strategy
             return balanceModel;
         }
 
+        // TODO - Add xml summaries with parameters
         public string GetValueInMoneyFormat(decimal inputMoney)
         {
             return string.Format("{0:0.00}", inputMoney);
         }
 
+        // TODO - Add xml summaries with parameters
         public string GetValueInDateFormat(DateTime inputDate)
         {
             return string.Format("{0:yyyy-MM-dd}", inputDate);

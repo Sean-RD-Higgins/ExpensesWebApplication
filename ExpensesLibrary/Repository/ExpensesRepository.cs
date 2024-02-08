@@ -10,16 +10,20 @@ using System.Threading.Tasks;
 
 namespace ExpensesLibrary.Repository
 {
+    // TODO - Add xml summaries with parameters
     public class ExpensesRepository
     {
+        // TODO - Add xml summaries with parameters
         // TODO - Since we do not require relational data, a NoSql database will be a better implementation.
         readonly MySqlConnection _connection;
 
+        // TODO - Add xml summaries with parameters
         public ExpensesRepository(MySqlConnection databaseConnection) 
         {
             _connection = databaseConnection;
         }
 
+        // TODO - Add xml summaries with parameters
         public ExpensesAudit GetExpensesAudit(int id)
         {
             ExpensesAudit expensesAudit = new ExpensesAudit();
@@ -44,6 +48,8 @@ namespace ExpensesLibrary.Repository
             }
             return expensesAudit;
         }
+
+        // TODO - Add xml summaries with parameters
         public void SetExpensesAudit(int id, ExpensesAudit expensesAudit)
         {
             string json = JsonConvert.SerializeObject(expensesAudit);
