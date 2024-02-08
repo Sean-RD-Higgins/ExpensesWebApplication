@@ -11,7 +11,7 @@ namespace ExpensesWebApplication
 {
 
 
-    public partial class About
+    public partial class App
     {
     }
 }

@@ -23,19 +23,12 @@ namespace ExpensesWebApplication
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            var isUsingMobileSwitcher = (ConfigurationManager.AppSettings["IsUsingMobileSwitcher"] ?? "false") == "true";
-
             // Determine current view
             var isMobile = WebFormsFriendlyUrlResolver.IsMobileView(new HttpContextWrapper(Context));
             CurrentView = isMobile ? MOBILE : DESKTOP;
 
             // Determine alternate view
             AlternateView = isMobile ? DESKTOP : MOBILE;
-
-            if (!isUsingMobileSwitcher) {
-                CurrentView = DESKTOP;
-                AlternateView = DESKTOP;
-            }
 
             // Create switch URL from the route, e.g. ~/__FriendlyUrls_SwitchView/Mobile?ReturnUrl=/Page
             var switchViewRouteName = "AspNet.FriendlyUrls.SwitchView";
