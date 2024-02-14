@@ -102,19 +102,19 @@
                 <ul>
                     <li>
                         Let's get technical!  You can find the code located 
-                        <a href="https://github.com/Sean-RD-Higgins/ExpensesWebApplication/blob/master/ExpensesLibrary/Strategy/ExpenseStrategy.cs#L11">here.</a>
+                        <a target="_blank" href="https://github.com/Sean-RD-Higgins/ExpensesWebApplication/blob/master/ExpensesLibrary/Strategy/ExpenseStrategy.cs#L11">here.</a>
                     </li>
                     <li>
                         If you are looking specifically for the style rules, it is  
-                        <a href="https://github.com/Sean-RD-Higgins/ExpensesWebApplication/blob/master/ExpensesWebApplication/App.aspx#L5">here.</a>
+                        <a target="_blank" href="https://github.com/Sean-RD-Higgins/ExpensesWebApplication/blob/master/ExpensesWebApplication/App.aspx#L5">here.</a>
                     </li>
                     <li>
                         The front end is important too of course, which can be seen  
-                        <a href="https://github.com/Sean-RD-Higgins/ExpensesWebApplication/blob/master/ExpensesWebApplication/App.aspx#L260">here.</a>
+                        <a target="_blank" href="https://github.com/Sean-RD-Higgins/ExpensesWebApplication/blob/master/ExpensesWebApplication/App.aspx#L260">here.</a>
                     </li>
                     <li>
                         Interest in the client side javascript can go 
-                        <a href="https://github.com/Sean-RD-Higgins/ExpensesWebApplication/blob/master/ExpensesWebApplication/App.aspx#L46">here.</a>
+                        <a target="_blank" href="https://github.com/Sean-RD-Higgins/ExpensesWebApplication/blob/master/ExpensesWebApplication/App.aspx#L46">here.</a>
                     </li>
                 </ul>
             </section>
