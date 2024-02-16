@@ -17,8 +17,8 @@ namespace ExpensesLibrary.Strategy
         const float DAYS_IN_A_WEEK_FLOAT = 7.0f;
         const decimal MONTHS_IN_A_YEAR_DECIMAL = 12.0m;
         const decimal MONTHS_IN_A_HALFYEAR_DECIMAL = 6.0m;
-        const decimal AVERAGE_WEEKS_PER_MONTH_DECIMAL = 30.42m / 7.0m;
-        const decimal AVERAGE_BIWEEKS_PER_MONTH_DECIMAL = 30.42m / 14.0m;
+        const decimal AVERAGE_WEEKS_PER_MONTH_DECIMAL = 4.345m;
+        const decimal AVERAGE_BIWEEKS_PER_MONTH_DECIMAL = 4.345m;
 
         // TODO - These are default values, retrieve the actual list from the database after login. 
         public IList<Expense> GetIncomeList()
