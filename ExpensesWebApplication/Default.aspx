@@ -32,12 +32,18 @@
                         With simplicity in mind, the User Flow Diagram was created
                         <a target="_blank" href="https://lucid.app/lucidchart/9354b162-41ba-4cf4-9f09-a60983137655/edit?invitationId=inv_34b4cc0b-7df8-4c63-b913-ffcbc9849055">here.</a>
                     </li>
-                    <li>We needed a place to put it, so we got some server space 
+                    <li>We needed a place to put it, so we got some server space and designed the system architecture 
                         <a target="_blank" href="https://higgins.host/">here.</a>
                     </li>
                     <li>
                         We made a database to store the temporary data for the application and drafted its design 
                         <a target="_blank" href="https://miro.com/app/board/uXjVNtYMEq0=/?share_link_id=134844273239">
+                            here.
+                        </a>
+                    </li>
+                    <li>
+                        The application needs to work, so we wrote up the test plans  
+                        <a href="~/TODO_REPLACE_THIS">here.</a
                             UNDER CONSTRUCTION.
                         </a>
                     </li>
@@ -55,7 +61,7 @@
                     <li>The Analysis Models section contains the list of any attached/referenced documentation, such as data flow diagrams, class diagrams, state-transition diagrams, and entity-relationship diagrams. </li>
                 </ul>
                 <div>
-                    <a class="btn btn-default" href="https://1drv.ms/w/s!AgmgeaIG079Thpwq1gSlDDlEQEydyA?e=x2VV3g">
+                    <a class="btn btn-primary btn-md" href="https://1drv.ms/w/s!AgmgeaIG079Thpwq1gSlDDlEQEydyA?e=x2VV3g">
                         View the document here
                     </a>
                 </div>
