@@ -56,8 +56,8 @@
         const DAYS_IN_A_WEEK_FLOAT = 7.0;
         const MONTHS_IN_A_YEAR_DECIMAL = 12.0;
         const MONTHS_IN_A_HALFYEAR_DECIMAL = 6.0;
-        const AVERAGE_WEEKS_PER_MONTH_DECIMAL = 30.437 / 7.0;
-        const AVERAGE_BIWEEKS_PER_MONTH_DECIMAL = 30.437 / 14.0;
+        const AVERAGE_WEEKS_PER_MONTH_DECIMAL = 4.345;
+        const AVERAGE_BIWEEKS_PER_MONTH_DECIMAL = 4.345 / 2;
 
         /*
             TODO - Move all of this and the references to a Strategy Pattern.
