@@ -33,7 +33,7 @@
                         <a target="_blank" href="https://lucid.app/lucidchart/9354b162-41ba-4cf4-9f09-a60983137655/edit?invitationId=inv_34b4cc0b-7df8-4c63-b913-ffcbc9849055">here.</a>
                     </li>
                     <li>We needed a place to put it, so we got some server space and designed the system architecture 
-                        <a target="_blank" href="https://higgins.host/">here.</a>
+                        <a target="_blank" href="https://miro.com/app/board/uXjVNsczKBE=/?share_link_id=894885219043">here.</a>
                     </li>
                     <li>
                         We made a database to store the temporary data for the application and drafted its design 
