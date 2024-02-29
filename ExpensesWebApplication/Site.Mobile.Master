@@ -10,6 +10,14 @@
 </head>
 <body>
     <form id="mainForm" runat="server">
+    <asp:ScriptManager runat="server">
+        <Scripts>
+            <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
+            <%--Framework Scripts--%>
+            <asp:ScriptReference Name="jquery" />
+            <%--Site Scripts--%>
+        </Scripts>
+    </asp:ScriptManager>
     <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark">
         <div class="container">
             <a class="navbar-brand" runat="server" href="~/">DashExpenses</a>
