@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="ExpensesLibrary.Expense">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAAAAAAAABQAAIAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\Expense.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ExpensesLibrary.ExpensesAudit">
+    <Position X="2.25" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACABgAAAAAAQAAIgEAAAAAgAQAAAEAAAEAAA=</HashCode>
+      <FileName>Model\ExpensesAudit.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ExpensesLibrary.VariableExpense">
+    <Position X="2.25" Y="3.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAAAAAAAAAQAEAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\VariableExpense.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ExpensesLibrary.VariableExpenseLine">
+    <Position X="4.5" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAABAAAAAAAAABAAAAAAAAAAA=</HashCode>
+      <FileName>Model\VariableExpenseLine.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ExpensesLibrary.Repository.ExpensesRepository">
+    <Position X="4.5" Y="2" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAhAA=</HashCode>
+      <FileName>Repository\ExpensesRepository.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ExpensesLibrary.Strategy.ExpenseStrategy">
+    <Position X="6.5" Y="0.5" Width="3" />
+    <TypeIdentifier>
+      <HashCode>QkYABAAAAQQIMAAQBAAAAgIAAAAAAAAAAAAAACAIQBA=</HashCode>
+      <FileName>Strategy\ExpenseStrategy.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="ExpensesLibrary.Frequency">
+    <Position X="0.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAQAQAAAAAAAAAEAggAAAAAgA=</HashCode>
+      <FileName>Model\Frequency.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

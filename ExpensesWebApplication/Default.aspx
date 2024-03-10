@@ -4,25 +4,25 @@
 
     <main>
         <section class="row" aria-labelledby="aspnetTitle">
-            <h1 id="aspnetTitle">DashExpenses</h1>
-            <p class="lead">Shouldn't your expenses be handled swiftly?</p>
+            <h1 id="aspnetTitle">DashBudget</h1>
+            <p class="lead">Shouldn't your budget be handled swiftly?</p>
             <p><a href="app" class="btn btn-primary btn-md">Try it out here</a></p>
         </section>
 
         <div class="row">
             <section class="col-md-4" aria-labelledby="librariesTitle"> 
-                <h2 id="librariesTitle">What Does DashExpenses Do?</h2>
+                <h2 id="librariesTitle">What Does DashBudget Do?</h2>
                 <ul>
-                    <li>Enter all of your weekly, monthly, or daily expenses in this simple-to-use application!</li>
-                    <li>Oil and gas prices changing all the time, so track the average with our Variable Expenses feature.</li>
-                    <li>Have various incomes for your households?  We got you covered.  You can enter each individual income for your household.</li>
-                    <li>Tips and commissions make your income difficult to track?  Enter them into our Variable Income section and we will average it for you.</li>
-                    <li>Utilize the Dashboard to handle the breakdown and view your monthly net profit.</li>
+                    <li>Enter weekly, monthly, or daily expenses in this simple-to-use application.</li>
+                    <li>Oil and gas prices are changing all the time - track the average with the Variable Expenses feature.</li>
+                    <li>Have multiple income streams? Enter each and the app takes care of the rest.</li>
+                    <li>With the Variable Income feature, even tips and commissions are easy to track.</li>
+                    <li>View monthly net income breakouts in our easy-to-read Dashboard.</li>
                 </ul>
                 <p><a href="app" class="btn btn-primary btn-md">Try it out here</a></p>
             </section>
             <section class="col-md-4" aria-labelledby="gettingStartedTitle">
-                <h2 id="gettingStartedTitle">The Making Of DashExpenses</h2>
+                <h2 id="gettingStartedTitle">The Making Of DashBudget</h2>
                 <ul>
                     <li>
                         A carefully crafted Requirements Document was created 
@@ -41,12 +41,6 @@
                             here.
                         </a>
                     </li>
-                    <li>
-                        The application needs to work, so we wrote up the test plans  
-                        <a href="~/TODO_REPLACE_THIS">here.</a
-                            UNDER CONSTRUCTION.
-                        </a>
-                    </li>
                 </ul>
             </section>
             <section class="col-md-4" aria-labelledby="gettingStartedTitle">
@@ -61,7 +55,7 @@
                     <li>The Analysis Models section contains the list of any attached/referenced documentation, such as data flow diagrams, class diagrams, state-transition diagrams, and entity-relationship diagrams. </li>
                 </ul>
                 <div>
-                    <a class="btn btn-primary btn-md" href="https://1drv.ms/w/s!AgmgeaIG079Thpwq1gSlDDlEQEydyA?e=x2VV3g">
+                    <a target="_blank" class="btn btn-primary btn-md" href="https://1drv.ms/w/s!AgmgeaIG079Thpwq1gSlDDlEQEydyA?e=x2VV3g">
                         View the document here
                     </a>
                 </div>
@@ -90,8 +84,10 @@
                 <h2 id="gettingStartedTitle">Quality Assurance</h2>
                 <ul>
                     <li>
-                        Test Plan: 
-                        <a target="_blank" href="~/TODO_REPLACE_THIS">UNDER CONSTRUCTION.</a>
+                        The application needs to work, so we wrote up the test plans  
+                        <a href="~/TODO_REPLACE_THIS">here.</a
+                            UNDER CONSTRUCTION.
+                        </a>
                     </li>
                     <li>
                         Test Cases: 
