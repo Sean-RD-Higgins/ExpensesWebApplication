@@ -24,6 +24,15 @@ namespace ExpensesWebApplication
         protected global::System.Web.UI.WebControls.ContentPlaceHolder HeadContent;
 
         /// <summary>
+        /// ScriptContentPlaceHolder control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder ScriptContentPlaceHolder;
+
+        /// <summary>
         /// mainForm control.
         /// </summary>
         /// <remarks>

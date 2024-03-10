@@ -103,20 +103,20 @@
                 <h2 id="gettingStartedTitle">Techy Stuff!</h2>
                 <ul>
                     <li>
-                        Let's get technical!  You can find the code located 
+                        Let's get technical!  You can find the serverside code located 
                         <a target="_blank" href="https://github.com/Sean-RD-Higgins/ExpensesWebApplication/blob/master/ExpensesLibrary/Strategy/ExpenseStrategy.cs#L11">here.</a>
                     </li>
                     <li>
                         If you are looking specifically for the style rules, it is  
-                        <a target="_blank" href="https://github.com/Sean-RD-Higgins/ExpensesWebApplication/blob/master/ExpensesWebApplication/App.aspx#L5">here.</a>
+                        <a target="_blank" href="https://github.com/Sean-RD-Higgins/ExpensesWebApplication/blob/master/ExpensesWebApplication/Content/budget-app.css#L1">here.</a>
                     </li>
                     <li>
                         The front end is important too of course, which can be seen  
-                        <a target="_blank" href="https://github.com/Sean-RD-Higgins/ExpensesWebApplication/blob/master/ExpensesWebApplication/App.aspx#L260">here.</a>
+                        <a target="_blank" href="https://github.com/Sean-RD-Higgins/ExpensesWebApplication/blob/master/ExpensesWebApplication/App.aspx#L10">here.</a>
                     </li>
                     <li>
                         Interest in the client side javascript can go 
-                        <a target="_blank" href="https://github.com/Sean-RD-Higgins/ExpensesWebApplication/blob/master/ExpensesWebApplication/App.aspx#L46">here.</a>
+                        <a target="_blank" href="https://github.com/Sean-RD-Higgins/ExpensesWebApplication/blob/master/ExpensesWebApplication/Scripts/budget-app.js#L1">here.</a>
                     </li>
                 </ul>
             </section>
