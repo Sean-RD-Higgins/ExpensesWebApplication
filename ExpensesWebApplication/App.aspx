@@ -59,15 +59,18 @@
         <section class="income-wrapper">
             <h2>
                 Income 
-                <input class="btn btn-default add-button" onclick="cloneCard(this, 'income-card', 'income-wrapper')" type="button" value="+"/>
+                <input class="btn btn-default add-button" onclick="cloneCard(this, 'income-card', 'income-wrapper', 'hidden')" type="button" value="+"/>
             </h2>
 
-            <% int i = 0; foreach (ExpensesLibrary.Expense income in balanceModel.IncomeList)
-                { %>
+            <%  
+                int i = 0; 
+                foreach (ExpensesLibrary.Expense income in balanceModel.IncomeList)
+                { 
+                    %>
                     <div class="income-card record">
                         <div>
                             <input name="IncomeName_<%=i%>" type="text" class="income-name name" value="<%=income.Name%>" onchange="autoSave()" />
-                            <input class="btn btn-default remove-button" onclick="removeCard(this)" type="button" value="X"/>
+                            <input class="btn btn-default remove-button <%=(i > 0) ? "" : "hidden"%>" onclick="removeCard(this)" type="button" value="X"/>
                         </div>
                         <input type="text" name="IncomeDescription_<%=i%>" class="income-desc description" value="<%=income.Description%>" onchange="autoSave()" />
                         <div>
@@ -94,22 +97,27 @@
                                 </div>
                         <% } %>
                     </div>
-            <%      i++; 
-               } %>
+                    <%      
+                    i++; 
+               } 
+            %>
         </section>
         
         <section class="variable-income-wrapper">
             <h2>
                 Variable Income
-                <input class="btn btn-default add-button" onclick="cloneCard(this, 'variable-income-card', 'variable-income-wrapper')" type="button" value="+"/>
+                <input class="btn btn-default add-button" onclick="cloneCard(this, 'variable-income-card', 'variable-income-wrapper', 'hidden')" type="button" value="+"/>
             </h2>
 
-            <% foreach (ExpensesLibrary.VariableExpense variableIncome in balanceModel.VariableIncomeList)
-                { %>
+            <% 
+                i = 0;
+                foreach (ExpensesLibrary.VariableExpense variableIncome in balanceModel.VariableIncomeList)
+                { 
+                    %>
                     <div class="variable-income-card record">
                         <div>
                             <input type="text" class="variable-income-name" value="<%=variableIncome.Name%>" />
-                            <input class="btn btn-default remove-button" onclick="removeCard(this)" type="button" value="X"/>
+                            <input class="btn btn-default remove-button <%=(i > 0) ? "" : "hidden"%>" onclick="removeCard(this)" type="button" value="X"/>
                         </div>
                         <input type="text" class="variable-income-desc description" value="<%=variableIncome.Description%>" />
                         <div>
@@ -117,32 +125,44 @@
                             <span>Monthly</span>
                         </div>
                         <div class="variable-income-line-list">
-                            <% foreach(ExpensesLibrary.VariableExpenseLine variableIncomeLine in variableIncome.VariableExpenseLineList )
-                                { %>
+                            <% 
+                                int j = 0;
+                                foreach(ExpensesLibrary.VariableExpenseLine variableIncomeLine in variableIncome.VariableExpenseLineList )
+                                { 
+                                    %>
                                     <div class="variable-income-line">
                                         <input type="text" class="variable-income-line-cost cost" value="<%=GetValueInMoneyFormat(variableIncomeLine.Cost)%>" onchange="autoSave()" />
                                         <input type="date" class="variable-income-line-date date" value="<%=GetValueInDateFormat(variableIncomeLine.Date)%>" onchange="autoSave()" />
                                         <!-- TODO - Replace all these inline onclicks with callbacks stored in a functional layer. -->
-                                        <input class="btn btn-default remove-button" onclick="removeVariableLine(this, 'variable-income-line')" type="button" value="X"/>
+                                        <input class="btn btn-default remove-button <%=(j > 0) ? "" : "hide-line"%>" onclick="removeVariableLine(this, 'variable-income-line')" type="button" value="X"/>
                                     </div>
-                            <% } %>
-                            <input class="btn btn-default add-button" onclick="cloneCard(this, 'variable-income-line', 'variable-income-card')" type="button" value="+"/>
+                                    <%
+                                    j++;
+                                } 
+                            %>
+                            <input class="btn btn-default add-button" onclick="cloneCard(this, 'variable-income-line', 'variable-income-card', 'hide-line')" type="button" value="+"/>
                         </div>
                     </div>
-            <% } %>
+                    <%
+                    i++;
+                } 
+            %>
         </section>
         <section class="expenses-wrapper">
             <h2>
                 Expenses
-                <input class="btn btn-default add-button" onclick="cloneCard(this, 'expense-card', 'expenses-wrapper')" type="button" value="+"/>
+                <input class="btn btn-default add-button" onclick="cloneCard(this, 'expense-card', 'expenses-wrapper', 'hidden')" type="button" value="+"/>
             </h2>
 
-            <% foreach (ExpensesLibrary.Expense expense in balanceModel.ExpenseList)
-               { %>
+            <% 
+                i = 0;
+                foreach (ExpensesLibrary.Expense expense in balanceModel.ExpenseList)
+                { 
+                    %>
                     <div class="expense-card record">
                         <div>
                             <input type="text" name="ExpenseName_<%=i%>" class="expense-name name" value="<%=expense.Name%>" />
-                            <input class="btn btn-default remove-button" onclick="removeCard(this)" type="button" value="X"/>
+                            <input class="btn btn-default remove-button <%=(i > 0) ? "" : "hidden"%>" onclick="removeCard(this)" type="button" value="X"/>
                         </div>
                         <input type="text" name="ExpenseDescription_<%=i%>" class="expense-desc description" value="<%=expense.Description%>" onchange="autoSave()" />
                         <div>
@@ -169,22 +189,26 @@
                                 </div>
                         <%} %>
                     </div>
-            <%      i++;
+                    <%      
+                    i++;
                } %>
         </section>
         
         <section class="variable-expenses-wrapper">
             <h2>
                 Variable Expenses
-                <input class="btn btn-default add-button" onclick="cloneCard(this, 'variable-expense-card', 'variable-expenses-wrapper')" type="button" value="+"/>
+                <input class="btn btn-default add-button" onclick="cloneCard(this, 'variable-expense-card', 'variable-expenses-wrapper', 'hidden')" type="button" value="+"/>
             </h2>
 
-            <% foreach (ExpensesLibrary.VariableExpense variableExpense in balanceModel.VariableExpenseList)
-                { %>
+            <% 
+                i = 0;
+                foreach (ExpensesLibrary.VariableExpense variableExpense in balanceModel.VariableExpenseList)
+                { 
+                    %>
                     <div class="variable-expense-card record">
                         <div>
                             <input type="text" class="variable-expense-name" value="<%=variableExpense.Name%>" />
-                            <input class="btn btn-default remove-button" onclick="removeCard(this)" type="button" value="X"/>
+                            <input class="btn btn-default remove-button <%=(i > 0) ? "" : "hidden"%>" onclick="removeCard(this)" type="button" value="X"/>
                         </div>
                         <input type="text" class="variable-expense-desc description" value="<%=variableExpense.Description%>" />
                         <div>
@@ -192,18 +216,27 @@
                             <span>Monthly</span>
                         </div>
                         <div class="variable-expense-line-list">
-                            <% foreach(ExpensesLibrary.VariableExpenseLine variableExpenseLine in variableExpense.VariableExpenseLineList )
-                                { %>
+                            <% 
+                                int j = 0;
+                                foreach(ExpensesLibrary.VariableExpenseLine variableExpenseLine in variableExpense.VariableExpenseLineList )
+                                { 
+                                    %>
                                     <div class="variable-expense-line">
                                         <input type="text" class="variable-expense-line-cost cost" value="<%=GetValueInMoneyFormat(variableExpenseLine.Cost)%>" onchange="autoSave()" />
                                         <input type="date" class="variable-expense-line-date date" value="<%=GetValueInDateFormat(variableExpenseLine.Date)%>" onchange="autoSave()" />
-                                        <input class="btn btn-default remove-button" onclick="removeVariableLine(this, 'variable-expense-line')" type="button" value="X"/>
+                                        <input class="btn btn-default remove-button <%=(j > 0) ? "" : "hide-line"%>" onclick="removeVariableLine(this, 'variable-expense-line')" type="button" value="X"/>
                                     </div>
-                            <% } %>
-                            <input class="btn btn-default add-button" onclick="cloneCard(this, 'variable-expense-line', 'variable-expense-card')" type="button" value="+"/>
+                                    <% 
+                                    j++;
+                                } 
+                            %>
+                            <input class="btn btn-default add-button" onclick="cloneCard(this, 'variable-expense-line', 'variable-expense-card', 'hide-line')" type="button" value="+"/>
                         </div>
                     </div>
-            <% } %>
+                    <%
+                    i++;
+                } 
+            %>
         </section>
 
     </main>
