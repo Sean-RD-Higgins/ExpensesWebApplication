@@ -1,0 +1,54 @@
+﻿
+
+.cost {
+    width: 5em;
+}
+
+.description {
+    width: 20em;
+    font-size: 10px;
+}
+
+.add-button {
+    background-color: lightgreen;
+    font-weight: bolder;
+    border: 1px solid black;
+    padding: 0.5em 1em;
+}
+
+.remove-button {
+    background-color: lightcoral;
+    font-weight: bolder;
+    margin: 0.1em 0em;
+    padding: 0.5em 1em;
+}
+
+.record {
+    background-color: #BFDFDF;
+    padding: 0.5em 1em;
+    margin: 0.5em 0;
+    display: inline-block;
+}
+
+.name {
+    width: 10em;
+}
+
+.money-breakdown td {
+    font-family: 'Courier New';
+    text-align: right;
+    border: 1px solid black;
+}
+
+.record {
+    vertical-align: top;
+}
+
+section {
+    margin: 2em 0;
+}
+
+.hidden, .hide-line {
+    display: none;
+    visibility: hidden;
+}
