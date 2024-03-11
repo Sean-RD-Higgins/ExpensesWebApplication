@@ -108,7 +108,7 @@ function removeCard(caller) {
 /*
     TODO - Add XML Summaries and param summaries.
 */
-function cloneCard(caller, className, parentClassName) {
+function cloneCard(caller, className, parentClassName, classToRemove) {
     var repeatingGroup = [];
     var currentCaller = caller;
     for (var i = 0; i < 5; i++) {
@@ -131,6 +131,9 @@ function cloneCard(caller, className, parentClassName) {
     });
     newSection.find("select").each(function (index, input) {
         input.name = input.name.replace("_" + currentIndex, "_" + newIndex);
+    });
+    newSection.find(`.${classToRemove}`).each(function (index, hiddenNode) {
+        hiddenNode.className = hiddenNode.className.replace(`${classToRemove}`, "");
     });
     autoSave();
     return false;

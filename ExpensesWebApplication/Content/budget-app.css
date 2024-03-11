@@ -47,3 +47,8 @@
 section {
     margin: 2em 0;
 }
+
+.hidden, .hide-line {
+    display: none;
+    visibility: hidden;
+}
