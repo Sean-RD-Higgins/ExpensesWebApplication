@@ -1,4 +1,4 @@
-﻿<%@ Page Title="DashExpense" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="App.aspx.cs" Inherits="ExpensesWebApplication.App" %>
+﻿<%@ Page Title="DashBudget" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="App.aspx.cs" Inherits="ExpensesWebApplication.App" %>
 
 <asp:Content ID="ScriptContent" ContentPlaceHolderID="ScriptContentPlaceHolder" runat="server">
     <%: Scripts.Render("~/bundles/budget-app") %>
