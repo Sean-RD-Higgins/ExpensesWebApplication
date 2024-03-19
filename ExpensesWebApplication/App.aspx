@@ -64,6 +64,7 @@
         <section class="income-wrapper">
             <h2>
                 Income 
+                <!-- TODO - Add listeners for the button actions instead. --> 
                 <input class="btn btn-default add-button" onclick="budgetViewFacade.cloneCard(this, 'income-card', 'income-wrapper', 'hidden')" type="button" value="+"/>
             </h2>
 
