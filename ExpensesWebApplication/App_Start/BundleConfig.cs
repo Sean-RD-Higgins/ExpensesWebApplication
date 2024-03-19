@@ -34,8 +34,8 @@ namespace ExpensesWebApplication
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
                             "~/Scripts/modernizr-*"));
 
-            bundles.Add(new ScriptBundle("~/bundles/budget-app").Include(
-                            "~/Scripts/budget-app.js"));
+            bundles.Add(new ScriptBundle("~/bundles/budget-view-facade").Include(
+                            "~/Scripts/budget-view-facade.js"));
             bundles.Add(new ScriptBundle("~/bundles/budget-strategy").Include(
                             "~/Scripts/budget-strategy.js"));
         }
