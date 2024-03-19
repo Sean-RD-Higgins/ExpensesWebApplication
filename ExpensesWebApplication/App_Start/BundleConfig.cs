@@ -36,6 +36,8 @@ namespace ExpensesWebApplication
 
             bundles.Add(new ScriptBundle("~/bundles/budget-app").Include(
                             "~/Scripts/budget-app.js"));
+            bundles.Add(new ScriptBundle("~/bundles/budget-strategy").Include(
+                            "~/Scripts/budget-strategy.js"));
         }
     }
 }

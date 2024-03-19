@@ -116,7 +116,7 @@
                     </li>
                     <li>
                         Interest in the client side javascript can go 
-                        <a target="_blank" href="https://github.com/Sean-RD-Higgins/ExpensesWebApplication/blob/master/ExpensesWebApplication/Scripts/budget-app.js#L1">here.</a>
+                        <a target="_blank" href="https://github.com/Sean-RD-Higgins/ExpensesWebApplication/blob/master/ExpensesWebApplication/Scripts/budget-strategy.js#L1">here.</a>
                     </li>
                 </ul>
             </section>

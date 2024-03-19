@@ -2,6 +2,7 @@
 
 <asp:Content ID="ScriptContent" ContentPlaceHolderID="ScriptContentPlaceHolder" runat="server">
     <%: Scripts.Render("~/bundles/budget-app") %>
+    <%: Scripts.Render("~/bundles/budget-strategy") %>
     <webopt:bundlereference runat="server" path="~/App/css" />
 </asp:Content>
 
