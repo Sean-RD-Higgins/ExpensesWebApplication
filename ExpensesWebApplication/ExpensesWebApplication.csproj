@@ -121,6 +121,8 @@
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="Content\budget-app.css" />
+    <Content Include="Content\diagrams\DashBudget-ReactUI-Desktop-MVP.png" />
+    <Content Include="Content\diagrams\DashBudget-ReactUI-MVP.png" />
     <Content Include="Content\diagrams\ExpensesClassDiagram.png" />
     <Content Include="Content\Site.css" />
     <Content Include="Default.aspx" />
