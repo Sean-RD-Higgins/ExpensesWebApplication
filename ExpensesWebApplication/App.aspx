@@ -1,7 +1,12 @@
 ﻿<%@ Page Title="DashBudget" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="App.aspx.cs" Inherits="ExpensesWebApplication.App" %>
 
 <asp:Content ID="ScriptContent" ContentPlaceHolderID="ScriptContentPlaceHolder" runat="server">
-    <%: Scripts.Render("~/bundles/budget-app") %>
+    <%: Scripts.Render("~/bundles/budget-view-facade") %>
+    <%: Scripts.Render("~/bundles/budget-strategy") %>
+    <script type="text/javascript">
+        const budgetStrategy = new BudgetStrategy();
+        const budgetViewFacade = new BudgetViewFacade(budgetStrategy);
+    </script>
     <webopt:bundlereference runat="server" path="~/App/css" />
 </asp:Content>
 
@@ -59,7 +64,8 @@
         <section class="income-wrapper">
             <h2>
                 Income 
-                <input class="btn btn-default add-button" onclick="cloneCard(this, 'income-card', 'income-wrapper', 'hidden')" type="button" value="+"/>
+                <!-- TODO - Add listeners for the button actions instead. --> 
+                <input class="btn btn-default add-button" onclick="budgetViewFacade.cloneCard(this, 'income-card', 'income-wrapper', 'hidden')" type="button" value="+"/>
             </h2>
 
             <%  
@@ -69,13 +75,13 @@
                     %>
                     <div class="income-card record">
                         <div>
-                            <input name="IncomeName_<%=i%>" type="text" class="income-name name" value="<%=income.Name%>" onchange="autoSave()" />
-                            <input class="btn btn-default remove-button <%=(i > 0) ? "" : "hidden"%>" onclick="removeCard(this)" type="button" value="X"/>
+                            <input name="IncomeName_<%=i%>" type="text" class="income-name name" value="<%=income.Name%>" onchange="budgetViewFacade.recalculate()" />
+                            <input class="btn btn-default remove-button <%=(i > 0) ? "" : "hidden"%>" onclick="budgetViewFacade.removeCard(this)" type="button" value="X"/>
                         </div>
-                        <input type="text" name="IncomeDescription_<%=i%>" class="income-desc description" value="<%=income.Description%>" onchange="autoSave()" />
+                        <input type="text" name="IncomeDescription_<%=i%>" class="income-desc description" value="<%=income.Description%>" onchange="budgetViewFacade.recalculate()" />
                         <div>
-                            <input type="text" name="IncomeCost_<%=i%>" class="income-cost cost" value="<%=GetValueInMoneyFormat(income.Cost)%>" onchange="autoSave()" />
-                            <select onchange="autoSave()" name="IncomeFrequency_<%=i%>" class="frequency" >
+                            <input type="text" name="IncomeCost_<%=i%>" class="income-cost cost" value="<%=GetValueInMoneyFormat(income.Cost)%>" onchange="budgetViewFacade.recalculate()" />
+                            <select onchange="budgetViewFacade.recalculate()" name="IncomeFrequency_<%=i%>" class="frequency" >
                                 <% foreach(ExpensesLibrary.Frequency frequency in Enum.GetValues(typeof(ExpensesLibrary.Frequency)) )
                                    { %>
                                         <option 
@@ -106,7 +112,7 @@
         <section class="variable-income-wrapper">
             <h2>
                 Variable Income
-                <input class="btn btn-default add-button" onclick="cloneCard(this, 'variable-income-card', 'variable-income-wrapper', 'hidden')" type="button" value="+"/>
+                <input class="btn btn-default add-button" onclick="budgetViewFacade.cloneCard(this, 'variable-income-card', 'variable-income-wrapper', 'hidden')" type="button" value="+"/>
             </h2>
 
             <% 
@@ -117,7 +123,7 @@
                     <div class="variable-income-card record">
                         <div>
                             <input type="text" class="variable-income-name" value="<%=variableIncome.Name%>" />
-                            <input class="btn btn-default remove-button <%=(i > 0) ? "" : "hidden"%>" onclick="removeCard(this)" type="button" value="X"/>
+                            <input class="btn btn-default remove-button <%=(i > 0) ? "" : "hidden"%>" onclick="budgetViewFacade.removeCard(this)" type="button" value="X"/>
                         </div>
                         <input type="text" class="variable-income-desc description" value="<%=variableIncome.Description%>" />
                         <div>
@@ -131,16 +137,16 @@
                                 { 
                                     %>
                                     <div class="variable-income-line">
-                                        <input type="text" class="variable-income-line-cost cost" value="<%=GetValueInMoneyFormat(variableIncomeLine.Cost)%>" onchange="autoSave()" />
-                                        <input type="date" class="variable-income-line-date date" value="<%=GetValueInDateFormat(variableIncomeLine.Date)%>" onchange="autoSave()" />
+                                        <input type="text" class="variable-income-line-cost cost" value="<%=GetValueInMoneyFormat(variableIncomeLine.Cost)%>" onchange="budgetViewFacade.recalculate()" />
+                                        <input type="date" class="variable-income-line-date date" value="<%=GetValueInDateFormat(variableIncomeLine.Date)%>" onchange="budgetViewFacade.recalculate()" />
                                         <!-- TODO - Replace all these inline onclicks with callbacks stored in a functional layer. -->
-                                        <input class="btn btn-default remove-button <%=(j > 0) ? "" : "hide-line"%>" onclick="removeVariableLine(this, 'variable-income-line')" type="button" value="X"/>
+                                        <input class="btn btn-default remove-button <%=(j > 0) ? "" : "hide-line"%>" onclick="budgetViewFacade.removeVariableLine(this, 'variable-income-line')" type="button" value="X"/>
                                     </div>
                                     <%
                                     j++;
                                 } 
                             %>
-                            <input class="btn btn-default add-button" onclick="cloneCard(this, 'variable-income-line', 'variable-income-card', 'hide-line')" type="button" value="+"/>
+                            <input class="btn btn-default add-button" onclick="budgetViewFacade.cloneCard(this, 'variable-income-line', 'variable-income-card', 'hide-line')" type="button" value="+"/>
                         </div>
                     </div>
                     <%
@@ -151,7 +157,7 @@
         <section class="expenses-wrapper">
             <h2>
                 Expenses
-                <input class="btn btn-default add-button" onclick="cloneCard(this, 'expense-card', 'expenses-wrapper', 'hidden')" type="button" value="+"/>
+                <input class="btn btn-default add-button" onclick="budgetViewFacade.cloneCard(this, 'expense-card', 'expenses-wrapper', 'hidden')" type="button" value="+"/>
             </h2>
 
             <% 
@@ -162,12 +168,12 @@
                     <div class="expense-card record">
                         <div>
                             <input type="text" name="ExpenseName_<%=i%>" class="expense-name name" value="<%=expense.Name%>" />
-                            <input class="btn btn-default remove-button <%=(i > 0) ? "" : "hidden"%>" onclick="removeCard(this)" type="button" value="X"/>
+                            <input class="btn btn-default remove-button <%=(i > 0) ? "" : "hidden"%>" onclick="budgetViewFacade.removeCard(this)" type="button" value="X"/>
                         </div>
-                        <input type="text" name="ExpenseDescription_<%=i%>" class="expense-desc description" value="<%=expense.Description%>" onchange="autoSave()" />
+                        <input type="text" name="ExpenseDescription_<%=i%>" class="expense-desc description" value="<%=expense.Description%>" onchange="budgetViewFacade.recalculate()" />
                         <div>
-                            <input type="text" name="ExpenseCost_<%=i%>" class="expense-cost cost" value="<%=GetValueInMoneyFormat(expense.Cost)%>" onchange="autoSave()" />
-                            <select onchange="autoSave()" class="frequency" >
+                            <input type="text" name="ExpenseCost_<%=i%>" class="expense-cost cost" value="<%=GetValueInMoneyFormat(expense.Cost)%>" onchange="budgetViewFacade.recalculate()" />
+                            <select onchange="budgetViewFacade.recalculate()" class="frequency" >
                                 <% foreach(ExpensesLibrary.Frequency frequency in Enum.GetValues(typeof(ExpensesLibrary.Frequency)) )
                                     { %>
                                         <option 
@@ -197,7 +203,7 @@
         <section class="variable-expenses-wrapper">
             <h2>
                 Variable Expenses
-                <input class="btn btn-default add-button" onclick="cloneCard(this, 'variable-expense-card', 'variable-expenses-wrapper', 'hidden')" type="button" value="+"/>
+                <input class="btn btn-default add-button" onclick="budgetViewFacade.cloneCard(this, 'variable-expense-card', 'variable-expenses-wrapper', 'hidden')" type="button" value="+"/>
             </h2>
 
             <% 
@@ -208,7 +214,7 @@
                     <div class="variable-expense-card record">
                         <div>
                             <input type="text" class="variable-expense-name" value="<%=variableExpense.Name%>" />
-                            <input class="btn btn-default remove-button <%=(i > 0) ? "" : "hidden"%>" onclick="removeCard(this)" type="button" value="X"/>
+                            <input class="btn btn-default remove-button <%=(i > 0) ? "" : "hidden"%>" onclick="budgetViewFacade.removeCard(this)" type="button" value="X"/>
                         </div>
                         <input type="text" class="variable-expense-desc description" value="<%=variableExpense.Description%>" />
                         <div>
@@ -222,15 +228,15 @@
                                 { 
                                     %>
                                     <div class="variable-expense-line">
-                                        <input type="text" class="variable-expense-line-cost cost" value="<%=GetValueInMoneyFormat(variableExpenseLine.Cost)%>" onchange="autoSave()" />
-                                        <input type="date" class="variable-expense-line-date date" value="<%=GetValueInDateFormat(variableExpenseLine.Date)%>" onchange="autoSave()" />
-                                        <input class="btn btn-default remove-button <%=(j > 0) ? "" : "hide-line"%>" onclick="removeVariableLine(this, 'variable-expense-line')" type="button" value="X"/>
+                                        <input type="text" class="variable-expense-line-cost cost" value="<%=GetValueInMoneyFormat(variableExpenseLine.Cost)%>" onchange="budgetViewFacade.recalculate()" />
+                                        <input type="date" class="variable-expense-line-date date" value="<%=GetValueInDateFormat(variableExpenseLine.Date)%>" onchange="budgetViewFacade.recalculate()" />
+                                        <input class="btn btn-default remove-button <%=(j > 0) ? "" : "hide-line"%>" onclick="budgetViewFacade.removeVariableLine(this, 'variable-expense-line')" type="button" value="X"/>
                                     </div>
                                     <% 
                                     j++;
                                 } 
                             %>
-                            <input class="btn btn-default add-button" onclick="cloneCard(this, 'variable-expense-line', 'variable-expense-card', 'hide-line')" type="button" value="+"/>
+                            <input class="btn btn-default add-button" onclick="budgetViewFacade.cloneCard(this, 'variable-expense-line', 'variable-expense-card', 'hide-line')" type="button" value="+"/>
                         </div>
                     </div>
                     <%
