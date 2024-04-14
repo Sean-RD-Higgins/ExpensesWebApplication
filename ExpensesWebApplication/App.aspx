@@ -2472,12 +2472,12 @@
     <!-- TODO - Replace all of this with a modern MVC framework --> 
     <main>
         <section>
-            <h1 id="aspnetTitle">Average Budget Report</h1>
+            <h1 id="aspnetTitle">Average Subtotal Monthly</h1>
             <p>Input all of your income and expenses to calculate your average net profit. The more information, the more accurate.</p>
             <table class="money-breakdown">
                 <tr>
                     <td>
-                        <span>Average Subtotal Monthly Income</span>
+                        <span>Gross Income</span>
                     </td>
                     <td>
                         <span class="subtotal-income"><%=GetValueInMoneyFormat(balanceModel.SubtotalIncome)%></span>
@@ -2485,7 +2485,8 @@
                 </tr>
                 <tr>
                     <td>
-                        <span>Average Subtotal Monthly Variable Income</span>
+                        <!-- TODO - merge these two together -->
+                        <span>Gross Variable Income</span>
                     </td>
                     <td>
                         <span class="subtotal-monthly-variable-income"><%=GetValueInMoneyFormat(balanceModel.SubtotalVariableIncome)%></span>
@@ -2493,7 +2494,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <span>Average Subtotal Monthly Expenses</span>
+                        <span>Expenses</span>
                     </td>
                     <td>
                         <span class="subtotal-monthly-expenses"><%=GetValueInMoneyFormat(balanceModel.SubtotalExpenses)%></span>
@@ -2501,7 +2502,8 @@
                 </tr>
                 <tr>
                     <td>
-                        <span>Average SubTotal Monthly Variable Expenses</span>
+                        <!-- TODO - merge these two together -->
+                        <span>Variable Expenses</span>
                     </td>
                     <td>
                         <span class="subtotal-monthly-variable-expenses"><%=GetValueInMoneyFormat(balanceModel.SubtotalVariableExpenses)%></span>
@@ -2509,7 +2511,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <span>Average Monthly Net Profit</span>
+                        <span>Net Income</span>
                     </td>
                     <td>
                         <span class="total-monthly-net-profit"><%=GetValueInMoneyFormat(balanceModel.NetProfit)%></span>

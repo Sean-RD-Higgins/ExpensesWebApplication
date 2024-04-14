@@ -68,7 +68,8 @@
                 <ul>
                     <li>
                         You can't just "start drawing" a page, you have to draft it first!  Check them out 
-                        <a target="_blank" href="~/TODO_REPLACE_THIS">UNDER CONSTRUCTION.</a>
+                        <a target="_blank" href="Content/diagrams/DashBudget-ReactUI-MVP.png">here</a> and 
+                        <a target="_blank" href="Content/diagrams/DashBudget-ReactUI-Desktop-MVP.png">here.</a>
                     </li>
                     <li>
                         What about user experience?  That is just as important!  Check out the prototype  
@@ -85,9 +86,7 @@
                 <ul>
                     <li>
                         The application needs to work, so we wrote up the test plans  
-                        <a href="~/TODO_REPLACE_THIS">here.</a
-                            UNDER CONSTRUCTION.
-                        </a>
+                        <a target="_blank" href="~/TODO_REPLACE_THIS">UNDER CONSTRUCTION.</a>
                     </li>
                     <li>
                         Test Cases: 
@@ -119,6 +118,10 @@
                         <a target="_blank" href="https://github.com/Sean-RD-Higgins/ExpensesWebApplication/blob/master/ExpensesWebApplication/Scripts/budget-strategy.js#L1">here</a> 
                         and
                         <a target="_blank" href="https://github.com/Sean-RD-Higgins/ExpensesWebApplication/blob/master/ExpensesWebApplication/Scripts/budget-view-facade.js#L1">here.</a>
+                    </li>                    
+                    <li>
+                        The class diagram can be reviewed 
+                        <a target="_blank" href="Content/diagrams/ExpensesClassDiagram.png">here.</a>
                     </li>
                 </ul>
             </section>
